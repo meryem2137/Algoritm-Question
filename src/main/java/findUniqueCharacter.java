@@ -5,7 +5,11 @@ import java.util.Optional;
 
 
 public class findUniqueCharacter {
-
+    public static void main(String[] args) {
+        String a="succes";
+        char c=findUnique(a);
+        System.out.println(c);
+    }
     public static char findUnique(String arr) {
         Map<Character, Integer> list = new HashMap<>();
         arr.chars().mapToObj(c -> (char) c).forEach(c -> list.put(c, list.getOrDefault(c, 0)+1));
