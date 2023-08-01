@@ -6,8 +6,8 @@ import java.util.OptionalInt;
 public class FindMaxFromIntArray {
     public static void main(String[] args) {
         int[] array = {6, 8, 3, 5, 1, 9};
-
-
+        int maxNumber=findMax(array);
+        System.out.println("Max Number: "+maxNumber);
 
     }
     public static int findMax(int[] arr){
