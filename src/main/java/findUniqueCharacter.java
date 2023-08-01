@@ -12,12 +12,13 @@ public class findUniqueCharacter {
     }
     public static char findUnique(String arr) {
         Map<Character, Integer> list = new HashMap<>();
-        arr.chars().mapToObj(c -> (char) c).forEach(c -> list.put(c, list.getOrDefault(c, 0)+1));
-
-        Optional<Character> firstUnique = list.entrySet().stream().filter(entry -> entry.getValue() == 1)
-                .map(Map.Entry::getKey)
-                .findFirst();
-        return firstUnique.orElse(' ');
+        for (char each : arr.toCharArray()) {
+            list.put(each, list.getOrDefault(each,0)+1);
+        }
+        for (char c : arr.toCharArray()) {
+            if (list.get(c)==1)
+                return c;
+        }return ' ';
 
     }
 
